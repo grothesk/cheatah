@@ -17,24 +17,24 @@ Create a secret:
     kubectl create secret tls tls-secret --cert=tls.cert --key=tls.key
     
     
-Specify an Ingress:
+Specify the Ingress:
 
 ```yaml
-    apiVersion: extensions/v1beta1 
-    kind: Ingress 
-    metadata:
-      name: myingress
-    spec:
-      tls:
-      - hosts:
-        - my.domain.name.com 
-        secretName: tls-secret 
-      rules:
-      - host: my.domain.name.com
-        http:
-          paths:
-          - path: /
-            backend:
-              serviceName: my-nodeport
-              servicePort: 80
+apiVersion: extensions/v1beta1 
+kind: Ingress 
+metadata:
+  name: myingress
+spec:
+  tls:
+  - hosts:
+    - my.domain.name.com 
+    secretName: tls-secret 
+  rules:
+  - host: my.domain.name.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: my-nodeport
+          servicePort: 80
 ```
