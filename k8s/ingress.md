@@ -19,6 +19,7 @@ Create a secret:
     
 Specify an Ingress:
 
+```yaml
     apiVersion: extensions/v1beta1 
     kind: Ingress 
     metadata:
@@ -36,3 +37,4 @@ Specify an Ingress:
             backend:
               serviceName: my-nodeport
               servicePort: 80
+```
