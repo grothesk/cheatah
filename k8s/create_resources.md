@@ -8,7 +8,7 @@ Create a pod - e.g. nginx:
     
 Generate a manifest:
 
-    kubectl run nginx --image=nginx dry-run -o yaml > nginx-pod.yaml
+    kubectl run nginx --image=nginx --dry-run -o yaml > nginx-pod.yaml
 
 ## Deployment
 
@@ -18,5 +18,5 @@ Create a deployment:
     
 Generate a manifest:
 
-    kubectl create deployment --image=nginx nginx dry-run -o yaml > nginx-pod.yaml
+    kubectl create deployment --image=nginx nginx --dry-run -o yaml > nginx-pod.yaml
    
