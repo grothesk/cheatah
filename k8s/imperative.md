@@ -4,11 +4,11 @@
 
 Create a pod - e.g. nginx - like this:
 
-    kubectl run nginx --image=nginx
+    kubectl run --generator=run-pod/v1 nginx --image=nginx
     
 Generate a manifest:
 
-    kubectl run nginx --image=nginx --dry-run -o yaml > nginx-pod.yaml
+    kubectl run --generator=run-pod/v1 nginx --image=nginx --dry-run -o yaml > nginx-pod.yaml
 
 ## Deployment
 
