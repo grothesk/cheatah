@@ -25,3 +25,9 @@ Generate a manifest:
 Create a namespace like this:
 
     kubectl create namespace my_namespace
+
+## Service
+
+Create a service (ClusterIP) like this:
+    
+    kubectl expose pod nginx --port=80 --name nginx-service
