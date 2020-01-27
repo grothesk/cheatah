@@ -1,6 +1,6 @@
 # Cluster
 
-## Update a Cluster
+## Update a Cluster via kubeadm
 
 Upgrade the master node - e.g. like this:
 
@@ -15,11 +15,13 @@ For each node do the following steps:
 
         kubectl drain node-name
     
-    
-2. Upgrade the node:
+2. Upgrade the node (commands have to be executed on the node):
 
         apt-get upgrade -y kubeadm=1.12.0-00
         apt-get upgrade -y kubelet=1.12.0-00
         kubeadm upgrade node config --kubelet-version v1.12.0
         systemctl restart kubelet
  
+3. Uncordon the node:
+
+        kubectl uncordon node-name
