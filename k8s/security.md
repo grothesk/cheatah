@@ -14,3 +14,6 @@ Create a self-signed Certificate for the CA:
 
     openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt
     
+Create a new certificate for ETCD clients:
+
+    openssl x509 -req -in /etc/kubernetes/pki/apiserver-etcd-client.csr -CA /etc/kubernetes/pki/etcd/ca.crt -CAkey /etc/kubernetes/pki/etcd/ca.key -CAcreateserial -out /etc/kubernetes/pki/apiserver-etcd-client.crt
